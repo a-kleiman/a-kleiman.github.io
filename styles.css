@@ -193,13 +193,16 @@ button {
   transition: transform 180ms ease;
 }
 
-.hero {
+.profile-section {
+  padding-block: clamp(4.5rem, 8vw, 7.5rem);
+}
+
+.profile-grid {
   display: grid;
-  min-height: calc(100vh - 78px);
-  padding-block: clamp(4rem, 9vw, 8.5rem);
+  max-width: 1020px;
   align-items: center;
-  grid-template-columns: minmax(0, 1.14fr) minmax(340px, 0.7fr);
-  gap: clamp(3rem, 8vw, 8rem);
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: clamp(3rem, 7vw, 6.5rem);
 }
 
 .eyebrow,
@@ -212,46 +215,34 @@ button {
   text-transform: uppercase;
 }
 
-.hero h1 {
-  max-width: 760px;
-  margin: 0;
+.profile-copy h1 {
+  margin: 0 0 1.5rem;
   font-family: var(--serif);
-  font-size: clamp(3.45rem, 7.1vw, 7.1rem);
+  font-size: clamp(3.6rem, 6vw, 6.2rem);
   font-weight: 500;
   letter-spacing: -0.06em;
-  line-height: 0.94;
+  line-height: 0.95;
 }
 
-.hero h1 em {
-  color: var(--terracotta);
-  font-weight: 500;
-}
-
-.hero-intro {
-  max-width: 665px;
-  margin: 2rem 0 0;
+.profile-copy > p {
+  max-width: 720px;
+  margin: 0;
   color: var(--muted);
-  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-  line-height: 1.58;
+  font-size: 1rem;
 }
 
-.status {
-  display: inline-flex;
-  margin-top: 1.6rem;
-  align-items: center;
-  gap: 0.65rem;
+.profile-copy .about-lead {
+  max-width: 780px;
+  margin-bottom: 1.25rem;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.profile-copy a {
   color: var(--sage-dark);
-  font-size: 0.92rem;
-  font-weight: 750;
-}
-
-.status-dot {
-  width: 9px;
-  height: 9px;
-  border: 2px solid var(--canvas);
-  border-radius: 50%;
-  background: var(--terracotta);
-  box-shadow: 0 0 0 2px var(--terracotta);
 }
 
 .hero-links {
@@ -314,13 +305,13 @@ button {
 
 .portrait-wrap {
   position: relative;
-  justify-self: end;
+  justify-self: start;
 }
 
 .portrait-accent {
   position: absolute;
-  top: -22px;
-  right: -22px;
+  top: -14px;
+  right: -14px;
   width: 56%;
   height: 54%;
   background: var(--peach);
@@ -330,72 +321,46 @@ button {
 .portrait {
   position: relative;
   z-index: 1;
-  width: min(100%, 430px);
+  width: 235px;
   margin: 0;
-  padding: 0.75rem;
+  padding: 0.55rem;
   background: var(--paper);
-  box-shadow: var(--shadow);
-  transform: rotate(1.2deg);
+  box-shadow: 0 18px 45px rgba(32, 43, 38, 0.12);
+  transform: rotate(-1deg);
 }
 
 .portrait img {
   width: 100%;
-  height: clamp(430px, 48vw, 555px);
-  aspect-ratio: 0.88;
+  height: 275px;
   object-fit: cover;
-  object-position: 50% 48%;
+  object-position: 50% 47%;
   filter: saturate(0.88) contrast(1.02);
 }
 
-.portrait figcaption {
+.research-block {
+  margin-top: clamp(4rem, 8vw, 7rem);
+  padding-top: clamp(3rem, 5vw, 4.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.research-heading {
   display: flex;
-  padding: 0.85rem 0.3rem 0.2rem;
+  margin-bottom: 2.5rem;
+  align-items: end;
   justify-content: space-between;
-  color: var(--muted);
-  font-family: var(--serif);
-  font-size: 0.8rem;
-  font-style: italic;
 }
 
-.about-band {
-  padding-block: clamp(4rem, 8vw, 7rem);
-  color: var(--canvas);
-  background: var(--ink);
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 0.32fr 1.2fr;
-  gap: clamp(2rem, 6vw, 7rem);
-}
-
-.about-band .section-label {
-  color: var(--peach);
-}
-
-.about-copy {
-  max-width: 870px;
-}
-
-.about-copy p {
-  max-width: 760px;
+.research-heading .section-label {
   margin: 0;
-  color: #c9d0cd;
-  font-size: 1rem;
 }
 
-.about-copy .about-lead {
-  max-width: 880px;
-  margin-bottom: 1.6rem;
-  color: var(--paper);
+.research-heading h2 {
+  margin: 0;
   font-family: var(--serif);
-  font-size: clamp(1.7rem, 3.2vw, 2.75rem);
-  letter-spacing: -0.025em;
-  line-height: 1.28;
-}
-
-.about-copy a {
-  color: var(--peach);
+  font-size: clamp(2.8rem, 5vw, 4.75rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1;
 }
 
 .section {
@@ -718,44 +683,6 @@ button {
   font-size: 0.78rem;
 }
 
-.contact-section {
-  padding-block: clamp(4.5rem, 8vw, 7rem);
-  color: var(--paper);
-  background: var(--terracotta);
-}
-
-.contact-grid {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 0.35fr 1fr auto;
-  gap: 3rem;
-}
-
-.contact-section .section-label {
-  margin: 0;
-  color: var(--ink);
-}
-
-.contact-section h2 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(2.5rem, 5vw, 4.6rem);
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 1;
-}
-
-.contact-section p {
-  max-width: 560px;
-  margin: 1rem 0 0;
-}
-
-.button-light {
-  border-color: rgba(255, 255, 255, 0.5);
-  color: var(--ink);
-  background: var(--paper);
-}
-
 .footer {
   padding-block: 1.6rem;
   color: #c4cbc7;
@@ -803,21 +730,19 @@ button {
 }
 
 @media (max-width: 920px) {
-  .hero {
-    min-height: auto;
-    grid-template-columns: 1fr;
+  .profile-grid {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 2.5rem;
   }
 
-  .hero-copy {
-    max-width: 760px;
+  .portrait {
+    width: 190px;
   }
 
-  .portrait-wrap {
-    width: min(76%, 470px);
-    justify-self: start;
+  .portrait img {
+    height: 225px;
   }
 
-  .about-grid,
   .section-heading {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -846,14 +771,6 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .contact-grid .button {
-    justify-self: start;
-  }
 }
 
 @media (max-width: 720px) {
@@ -918,33 +835,37 @@ button {
     display: none;
   }
 
-  .hero {
+  .profile-section {
     padding-block: 3.5rem 5rem;
-    gap: 4.5rem;
   }
 
-  .hero h1 {
-    font-size: clamp(3.25rem, 15vw, 5.5rem);
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .profile-copy h1 {
+    font-size: clamp(3.4rem, 16vw, 4.8rem);
   }
 
   .hero-links {
     display: grid;
     align-items: center;
     justify-content: start;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
     gap: 1rem 1.4rem;
   }
 
-  .hero-links .button {
-    grid-column: 1 / -1;
+  .portrait-wrap {
+    width: auto;
   }
 
-  .portrait-wrap {
-    width: calc(100% - 1rem);
+  .portrait {
+    width: 165px;
   }
 
   .portrait img {
-    height: clamp(410px, 118vw, 520px);
+    height: 195px;
   }
 
   .about-grid {
