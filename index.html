@@ -1,583 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - PhD Researcher</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #d9e8ff 0%, #9dcbff 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            padding: 3rem;
-            margin-bottom: 0.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-section {
-            padding: 3rem;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-left {
-            flex-shrink: 0;
-        }
-
-        .hero-right {
-            flex: 1;
-        }
-
-        .profile-image {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #546e7a;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 35px rgba(84, 110, 122, 0.3);
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            font-weight: 300;
-        }
-
-        .title {
-            font-size: 1.3rem;
-            color: #546e7a;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .about-section {
-            border-top: 2px solid rgba(84, 110, 122, 0.1);
-            padding-top: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #555;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item:hover {
-            color: #546e7a;
-        }
-
-        .section {
-            margin-bottom: 2rem;
-        }
-
-        .section h2 {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #546e7a;
-            position: relative;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: #455a64;
-            transition: width 0.3s ease;
-        }
-
-        .section:hover h2::after {
-            width: 100px;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            text-align: justify;
-            color: #444;
-            line-height: 1.8;
-        }
-
-        .publication {
-            background: rgba(84, 110, 122, 0.05);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            border-left: 4px solid #546e7a;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .publication:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(84, 110, 122, 0.1);
-        }
-
-        .pub-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .pub-authors {
-            color: #555;
-            margin-bottom: 0.5rem;
-            font-style: italic;
-        }
-
-        .pub-venue {
-            color: #546e7a;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .pub-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .pub-link {
-            color: #455a64;
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.2rem 0.8rem;
-            border: 1px solid #455a64;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .pub-link:hover {
-            background: #455a64;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .skill-tag {
-            background: linear-gradient(45deg, #546e7a, #455a64);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            transition: transform 0.2s ease;
-        }
-
-        .skill-tag:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .card {
-                padding: 2rem;
-            }
-            
-            .hero-section {
-                padding: 2rem;
-            }
-
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 2rem;
-                margin-bottom: 2rem;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .contact-info {
-                justify-content: center;
-                gap: 1rem;
-            }
-            
-            .profile-image {
-                width: 180px;
-                height: 180px;
-            }
-        }
-            
-         /* Navigation Bar Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: white;
-            padding: 0.5rem 2rem;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #1a365d;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-link {
-            color: #1a365d;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            transition: background 0.3s ease;
-        }
-
-        .nav-link:hover {
-            background: rgba(26, 54, 93, 0.1);
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: #1a365d;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: rgba(255, 255, 255, 0.95);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                backdrop-filter: blur(10px);
-                padding: 2rem 0;
-                gap: 1rem;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .menu-toggle.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .menu-toggle.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-        }
-
-
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="Anat Kleiman is a final-year Computer Science PhD candidate at Harvard researching reliable language models, continual learning, and machine unlearning.">
+  <meta property="og:title" content="Anat Kleiman — Machine Learning Researcher">
+  <meta property="og:description" content="Research on reliable language models, continual learning, and machine unlearning.">
+  <meta property="og:image" content="https://a-kleiman.github.io/profile.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://a-kleiman.github.io/">
+  <title>Anat Kleiman — Machine Learning Researcher</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-        <!-- Navigation Buttons Div -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <nav class="navbar">
-            <div class="nav-container">
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#education" class="nav-link">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#publication" class="nav-link">Papers</a>
-                    </li>
-                   
-                </ul>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-    <div class="container">
-        <!-- Hero Section with Profile and About -->
-        <div id='about' class="card hero-section">
-            <div class="hero-content">
-                <div class="hero-left">
-                    <img src="profile.jpg" alt="Your Name" class="profile-image">
-                    <!-- <img src="passport.jpg" alt="Your Name" class="profile-image"> -->
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="wordmark" href="#top" aria-label="Anat Kleiman, home">
+        <span class="wordmark-mark" aria-hidden="true">AK</span>
+        <span class="wordmark-name">Anat Kleiman</span>
+      </a>
 
-                </div>
-                <div class="hero-right">
-                    <h1>Anat Kleiman</h1>
-                    <div class="title">PhD Candidate in Computer Science</div>
-                </div>
-            </div>
-            
-            <div class="about-section">
-                <p class="about-text">
-                    I am a 4th year PhD candidate in Computer Science at Harvard University in <a href="https://mlfoundations.org/">Machine Learning Foundations</a>. I am advised by 
-                    <a href="https://shamulent.github.io/">Sham Kakade</a> and <a href="http://www.jfrankle.com/">Jonathan Frankle</a>. My research focuses on the science of deep learning, with a particular emphasis on large language models (LLMs). 
-                    I am especially interested in identifying and addressing empirical challenges in LLM applications, including issues like catastrophic forgetting and inefficient reasoning. In addition, my work explores the use of LLMs in tasks involving reasoning, unlearning, and continual learning. 
-                    I am also supported by the <a href="https://kempnerinstitute.harvard.edu/careers-opportunities/grants-fellowships/">Kempner Graduate Student Fellowship</a>
-                </p>
-                <br>
-                <p class="about-text">
-                    In the summer of 2024, I interned as a Machine Learning Research Intern at Apple where I worked on unlearning.
-                    Before that, in the summer of 2022, I worked as a Machine Learning intern at Netflix focusing on video automation. 
-                    Finally, during the summers of 2019-2020, I worked as a software engineering intern at Uber ATG on self-driving vehicles.
-                    I also completed my MSE degree in Computer Science at Princeton University where I worked with Ryan Adams. 
-                </p>
-                <!-- where I worked with Udi Wieder, Moises Goldszmidt, and Vitaly Feldman., where I worked with Boris Chen -->
-                
-                <div class="contact-info">
-                    <a class="contact-item"> 
-                        📧 anatkleiman at g.harvard.edu
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=1QM3BUAAAAAJ&hl=en" class="contact-item">
-                        ✨ Google Scholar
-                    </a>
-                    <a href="https://github.com/a-kleiman/" class="contact-item">
-                        🐙 GitHub
-                    </a>
-                    
-                </div>
-            </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#background">Background</a>
+        <a class="nav-contact" href="mailto:anatkleiman@g.harvard.edu">Get in touch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Final-year PhD candidate · Harvard Computer Science</p>
+        <h1 class="reveal">Building learning systems that <em>remember what matters</em>.</h1>
+        <p class="hero-intro reveal">
+          I study how machine learning systems acquire, retain, and judge information—
+          especially where real-world deployment exposes weaknesses in language models.
+        </p>
+        <div class="status reveal">
+          <span class="status-dot" aria-hidden="true"></span>
+          On the 2026–27 academic job market
+        </div>
+        <div class="hero-links reveal" aria-label="Profile links">
+          <a class="button button-primary" href="#publications">Explore my research</a>
+          <a class="text-link" href="https://scholar.google.com/citations?user=1QM3BUAAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://github.com/a-kleiman">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="portrait-wrap reveal">
+        <div class="portrait-accent" aria-hidden="true"></div>
+        <figure class="portrait">
+          <img src="profile.jpg" alt="Anat Kleiman" width="1497" height="1402">
+          <figcaption>
+            <span>Machine learning researcher</span>
+            <span>Cambridge, MA</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="about-band">
+      <div class="shell about-grid">
+        <p class="section-label reveal">About</p>
+        <div class="about-copy reveal">
+          <p class="about-lead">
+            I am a PhD candidate at Harvard, advised by
+            <a href="https://shamulent.github.io/">Sham Kakade</a> and
+            <a href="https://www.jfrankle.com/">Jonathan Frankle</a>, and a
+            <a href="https://kempnerinstitute.harvard.edu/people/our-people/anat-kleiman/">Kempner Graduate Fellow</a>.
+          </p>
+          <p>
+            My work spans reliable language models, continual learning, and machine
+            unlearning. I am broadly interested in the empirical science of deep learning:
+            identifying consequential failure modes, understanding why they arise, and
+            designing practical methods that make models more dependable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="research">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-label">Research agenda</p>
+          <h2>Learning over time,<br>under real constraints.</h2>
+        </div>
+        <p>
+          My research connects questions about what models learn with what they retain,
+          trust, and can efficiently forget.
+        </p>
+      </div>
+
+      <div class="research-grid">
+        <article class="research-card reveal">
+          <span class="card-number">01</span>
+          <h3>Reliable language models</h3>
+          <p>
+            Evaluating when models trust unreliable context, why reasoning does not always
+            prevent hallucination, and how to make model outputs more dependable.
+          </p>
+          <span class="topic-line" aria-hidden="true"></span>
+        </article>
+        <article class="research-card reveal">
+          <span class="card-number">02</span>
+          <h3>Continual learning</h3>
+          <p>
+            Measuring and mitigating catastrophic forgetting as models learn successive
+            tasks, without retaining past data or adding heavy computational overhead.
+          </p>
+          <span class="topic-line" aria-hidden="true"></span>
+        </article>
+        <article class="research-card reveal">
+          <span class="card-number">03</span>
+          <h3>Machine unlearning</h3>
+          <p>
+            Understanding which training points meaningfully influence model behavior and
+            using that structure to make data removal substantially more efficient.
+          </p>
+          <span class="topic-line" aria-hidden="true"></span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section publications-section" id="publications">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-label">Selected work</p>
+            <h2>Publications</h2>
+          </div>
+          <p>
+            A complete, current record is available on
+            <a href="https://scholar.google.com/citations?user=1QM3BUAAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a>.
+          </p>
         </div>
 
-        <!-- Education Section -->
-        <div id='education' class="card">
-            <div class="section">
-                <h2>Education</h2>
-                <div class="publication">
-                    <div class="pub-title">PhD in Computer Science</div>
-                    <div class="pub-authors">Harvard University, 2022 - Present</div>
-                    <!-- <div class="pub-venue">Advisor: [Advisor Name]</div> -->
-                </div>
-
-                <div class="publication">
-                    <div class="pub-title">MSE in Computer Science</div>
-                    <div class="pub-authors">Princeton University, 2020-2022</div>
-                    <!-- <div class="pub-venue">GPA: [X.X/4.0] (if notable)</div> -->
-                </div>
+        <div class="featured-papers">
+          <article class="paper-card featured reveal">
+            <div class="paper-meta">
+              <span>2025</span>
+              <span>Machine unlearning</span>
             </div>
+            <h3>When Unlearning Is Free: Leveraging Low Influence Points to Reduce Computational Costs</h3>
+            <p class="authors"><strong>Anat Kleiman</strong>, Robert Fisher, Ben Deaner, Udi Wieder</p>
+            <p class="paper-summary">
+              Identifies training examples with negligible model influence and uses them
+              to reduce unlearning costs by up to roughly 50% in real-world settings.
+            </p>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2512.05254">arXiv <span aria-hidden="true">↗</span></a>
+              <a href="https://machinelearning.apple.com/research/unlearning-free-low-influence">Apple Research <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="paper-card featured reveal">
+            <div class="paper-meta">
+              <span>2025</span>
+              <span>Reliable LLMs</span>
+            </div>
+            <h3>The SMeL Test: A Simple Benchmark for Media Literacy in Language Models</h3>
+            <p class="authors">Gustaf Ahdritz, <strong>Anat Kleiman</strong></p>
+            <p class="paper-summary">
+              Tests whether language models can distinguish reliable from untrustworthy
+              sources—and finds that even strong reasoning models often cannot.
+            </p>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2508.02074">arXiv <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/gahdritz/smel">Code <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="paper-card featured reveal">
+            <div class="paper-meta">
+              <span>ICML 2025</span>
+              <span>Continual learning</span>
+            </div>
+            <h3>Soup to Go: Mitigating Forgetting During Continual Learning with Model Averaging</h3>
+            <p class="authors"><strong>Anat Kleiman</strong>, Gintare Karolina Dziugaite, Jonathan Frankle, Sham M. Kakade, Mansheej Paul</p>
+            <p class="paper-summary">
+              Introduces Sequential Fine-tuning with Averaging, retaining prior knowledge
+              across domains without replaying old data.
+            </p>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2501.05559">arXiv <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="paper-card featured reveal">
+            <div class="paper-meta">
+              <span>NeurIPS 2024</span>
+              <span>Generative models</span>
+            </div>
+            <h3>Transcendence: Generative Models Can Outperform the Experts That Train Them</h3>
+            <p class="authors">Edwin Zhang, Vincent Zhu, Naomi Saphra, <strong>Anat Kleiman</strong>, Benjamin Edelman, Milind Tambe, Sham Kakade, Eran Malach</p>
+            <p class="paper-summary">
+              Shows when a generative model trained on expert demonstrations can exceed
+              every expert in its training set.
+            </p>
+            <div class="paper-links">
+              <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/9e3bba153aa362f961dc43de5cababac-Abstract-Conference.html">NeurIPS <span aria-hidden="true">↗</span></a>
+              <a href="https://arxiv.org/abs/2406.11741">arXiv <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
 
-        <!-- Publications Section -->
-        <div id='publication' class="card">
-            <div class="section">
-                <h2>Papers</h2>
+        <div class="more-papers reveal">
+          <h3 class="more-papers-title">Earlier work</h3>
 
-                <h3>Preprints</h3>
-                
-                <div class="publication">
-                    <div class="pub-title">Soup to go: mitigating forgetting during continual learning with model averaging</div>
-                    <div class="pub-authors"><strong>Anat Kleiman</strong>, Gintare Karolina Dziugaite, Jonathan Frankle, Sham M. Kakade, Mansheej Paul</div>
-                    <div class="pub-links">
-                        <a href="https://arxiv.org/abs/2501.05559" class="pub-link">arXiv</a>
-                        <!-- <a href="#" class="pub-link">Code</a> -->
-                    </div>
-                </div>
-
-                <h3>Published</h3>
-                
-                <div class="publication">
-                    <div class="pub-title">Transcendence: Generative models can outperform the experts that train them</div>
-                    <div class="pub-authors">Edwin Zhang, Vincent Zhu, Naomi Saphra, <strong>Anat Kleiman</strong>, Benjamin Edelman, Milind Tambe, Sham Kakade, Eran Malach</div>
-                    <div class="pub-venue">38th Conference on Neural Information Processing Systems (NeurIPS 2024)</div>
-                    <div class="pub-links">
-                        <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/9e3bba153aa362f961dc43de5cababac-Paper-Conference.pdf" class="pub-link">PDF</a>
-                        <a href="https://arxiv.org/abs/2406.11741" class="pub-link">arXiv</a>
-                        <!-- <a href="#" class="pub-link">Code</a>
-                        <a href="#" class="pub-link">Slides</a> -->
-                    </div>
-                </div>
-
-                <div class="publication">
-                    <div class="pub-title">REVISE: A tool for measuring and mitigating bias in visual datasets</div>
-                    <div class="pub-authors">Angelina Wang, Alexander Liu, Ryan Zhang, <strong>Anat Kleiman</strong>, Leslie Kim, Dora Zhao, Iroha Shirai, Arvind Narayanan, Olga Russakovsky</div>
-                    <div class="pub-venue">International Journal of Computer Vision (IJCV 2022)</div>
-                    <div class="pub-links">
-                        <a href="https://arxiv.org/pdf/2004.07999" class="pub-link">arXiv</a>
-                        <a href="https://github.com/princetonvisualai/revise-tool" class="pub-link">GitHub</a>
-                        <!-- <a href="#" class="pub-link">Slides</a> -->
-                    </div>
-                </div>
-                <h3>Workshops</h3>
-                
-                <div class="publication">
-                    <div class="pub-title">Predicting task forgetting in large language models</div>
-                    <div class="pub-authors"><strong>Anat Kleiman</strong>, Jonathan Frankle, Sham M Kakade, Mansheej Paul</div>
-                    <div class="pub-venue">Workshop on Challenges in Deployable Generative AI at International Conference on Machine Learning (ICML 2023)</div>
-                    <div class="pub-links">
-                        <a href="https://openreview.net/pdf?id=0BMg0OgNTP" class="pub-link">PDF</a>
-                        <!-- <a href="#" class="pub-link">arXiv</a>
-                        <a href="#" class="pub-link">Code</a>
-                        <a href="#" class="pub-link">Slides</a> -->
-                    </div>
-                </div>
-                <div class="publication">
-                    <div class="pub-title">Soft prompting might be a bug, not a feature</div>
-                    <div class="pub-authors">Luke Bailey*, Gustaf Ahdritz*, <strong>Anat Kleiman*</strong>, Siddharth Swaroop, Finale Doshi-Velez, Weiwei Pan</div>
-                    <div class="pub-venue">Workshop on Challenges in Deployable Generative AI at International Conference on Machine Learning (ICML 2023)</div>
-                    <div class="pub-links">
-                        <a href="https://openreview.net/pdf?id=MHWDdMEJ5s" class="pub-link">PDF</a>
-                        <!-- <a href="#" class="pub-link">arXiv</a>
-                        <a href="#" class="pub-link">Code</a>
-                        <a href="#" class="pub-link">Slides</a> -->
-                    </div>
-                </div>
-                <div class="publication">
-                    <div class="pub-title">Buffer pool aware query scheduling via deep reinforcement learning</div>
-                    <div class="pub-authors">Chi Zhang, Ryan Marcus, <strong>Anat Kleiman</strong>, Olga Papaemmanouil</div>
-                    <div class="pub-venue">2nd International Workshop on Applied AI for Database Systems and Applications(VLDB 2020)</div>
-                    <div class="pub-links">
-                        <!-- <a href="#" class="pub-link">PDF</a> -->
-                        <a href="https://arxiv.org/pdf/2007.10568" class="pub-link">arXiv</a>
-                        <!-- <a href="#" class="pub-link">Code</a>
-                        <a href="#" class="pub-link">Slides</a> -->
-                    </div>
-                </div>
+          <article class="paper-row">
+            <div class="paper-year">2023</div>
+            <div>
+              <h4>Predicting Task Forgetting in Large Language Models</h4>
+              <p><strong>Anat Kleiman</strong>, Jonathan Frankle, Sham M. Kakade, Mansheej Paul</p>
+              <p class="venue">ICML Workshop on Challenges in Deployable Generative AI</p>
             </div>
+            <a href="https://icml.cc/virtual/2023/28944" aria-label="View Predicting Task Forgetting in Large Language Models">ICML page <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="paper-row">
+            <div class="paper-year">2023</div>
+            <div>
+              <h4>Soft Prompting Might Be a Bug, Not a Feature</h4>
+              <p>Luke Bailey*, Gustaf Ahdritz*, <strong>Anat Kleiman*</strong>, Siddharth Swaroop, Finale Doshi-Velez, Weiwei Pan</p>
+              <p class="venue">ICML Workshop on Challenges in Deployable Generative AI</p>
+            </div>
+            <a href="https://icml.cc/virtual/2023/28923" aria-label="View Soft Prompting Might Be a Bug, Not a Feature">ICML page <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="paper-row">
+            <div class="paper-year">2022</div>
+            <div>
+              <h4>REVISE: A Tool for Measuring and Mitigating Bias in Visual Datasets</h4>
+              <p>Angelina Wang, Alexander Liu, Ryan Zhang, <strong>Anat Kleiman</strong>, Leslie Kim, Dora Zhao, Iroha Shirai, Arvind Narayanan, Olga Russakovsky</p>
+              <p class="venue">International Journal of Computer Vision</p>
+            </div>
+            <div class="row-links">
+              <a href="https://arxiv.org/abs/2004.07999">Paper <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/princetonvisualai/revise-tool">Code <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="paper-row">
+            <div class="paper-year">2020</div>
+            <div>
+              <h4>Buffer Pool Aware Query Scheduling via Deep Reinforcement Learning</h4>
+              <p>Chi Zhang, Ryan Marcus, <strong>Anat Kleiman</strong>, Olga Papaemmanouil</p>
+              <p class="venue">AIDB Workshop at VLDB</p>
+            </div>
+            <a href="https://arxiv.org/abs/2007.10568" aria-label="Read Buffer Pool Aware Query Scheduling via Deep Reinforcement Learning">Paper <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="background">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-label">Background</p>
+          <h2>Research in academia<br>and industry.</h2>
+        </div>
+        <p>
+          I have worked across foundational and applied machine learning, from language
+          models and unlearning to video systems and autonomous vehicles.
+        </p>
+      </div>
+
+      <div class="background-grid">
+        <div class="timeline reveal">
+          <h3>Experience</h3>
+          <article>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-date">Summer 2024</div>
+            <div>
+              <h4>Apple</h4>
+              <p>Machine Learning Research Intern · Machine unlearning</p>
+            </div>
+          </article>
+          <article>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-date">Summer 2022</div>
+            <div>
+              <h4>Netflix</h4>
+              <p>Machine Learning Intern · Video automation</p>
+            </div>
+          </article>
+          <article>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-date">2019–2020</div>
+            <div>
+              <h4>Uber ATG</h4>
+              <p>Software Engineering Intern · Self-driving systems</p>
+            </div>
+          </article>
         </div>
 
-    <script>
-        // Mobile menu toggle functionality
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+        <div class="education reveal">
+          <h3>Education</h3>
+          <article>
+            <span class="education-year">2022–present</span>
+            <h4>Harvard University</h4>
+            <p>PhD in Computer Science</p>
+            <p class="detail">Advised by Sham Kakade and Jonathan Frankle</p>
+          </article>
+          <article>
+            <span class="education-year">2020–2022</span>
+            <h4>Princeton University</h4>
+            <p>MSE in Computer Science</p>
+            <p class="detail">Worked with Ryan Adams</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+    <section class="contact-section">
+      <div class="shell contact-grid reveal">
+        <p class="section-label">Let’s connect</p>
+        <div>
+          <h2>Interested in my work?</h2>
+          <p>
+            I am always happy to discuss research, collaborations, and academic opportunities.
+          </p>
+        </div>
+        <a class="button button-light" href="mailto:anatkleiman@g.harvard.edu">anatkleiman@g.harvard.edu</a>
+      </div>
+    </section>
+  </main>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                // Close mobile menu
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                
-                const targetId = link.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetSection) {
-                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                    const targetPosition = targetSection.offsetTop - navbarHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-                
-                return false;
-            });
-        });
-
-        // Add scroll effect to navbar
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-            } else {
-                navbar.style.background = 'white';
-            }
-        });
-    </script>
+  <footer class="footer">
+    <div class="shell">
+      <p>© <span id="year">2026</span> Anat Kleiman</p>
+      <div>
+        <a href="https://scholar.google.com/citations?user=1QM3BUAAAAAJ&amp;hl=en">Scholar</a>
+        <a href="https://github.com/a-kleiman">GitHub</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
