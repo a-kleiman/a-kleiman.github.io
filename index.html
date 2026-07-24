@@ -42,21 +42,23 @@
   <main id="main">
     <section class="profile-section shell" id="top">
       <div class="profile-grid">
-        <div class="portrait-wrap reveal">
-          <div class="portrait-accent" aria-hidden="true"></div>
-          <figure class="portrait">
-            <img src="profile.jpg" alt="Anat Kleiman" width="1497" height="1402">
-          </figure>
-        </div>
-
         <div class="profile-copy reveal">
           <p class="eyebrow">PhD candidate · Harvard Computer Science</p>
           <h1>Anat Kleiman</h1>
+          <div class="portrait-wrap">
+            <div class="portrait-accent" aria-hidden="true"></div>
+            <figure class="portrait">
+              <img src="profile.jpg" alt="Anat Kleiman" width="1497" height="1402">
+            </figure>
+          </div>
           <p class="about-lead">
             I am a final-year PhD candidate at Harvard, advised by
             <a href="https://shamulent.github.io/">Sham Kakade</a> and
-            <a href="https://www.jfrankle.com/">Jonathan Frankle</a>, and a
-            <a href="https://kempnerinstitute.harvard.edu/people/our-people/anat-kleiman/">Kempner Graduate Fellow</a>.
+            <a href="https://www.jfrankle.com/">Jonathan Frankle</a>.
+          </p>
+          <p class="fellowship-note">
+            I am funded by the
+            <a href="https://kempnerinstitute.harvard.edu/careers-opportunities/grants-fellowships/">Kempner Graduate Fellowship</a>.
           </p>
           <p>
             My work spans reliable language models, continual learning, and machine
@@ -65,16 +67,30 @@
             designing practical methods that make models more dependable.
           </p>
           <div class="hero-links" aria-label="Profile links">
-            <a class="text-link" href="mailto:anatkleiman@g.harvard.edu">Email <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="https://scholar.google.com/citations?user=1QM3BUAAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="https://github.com/a-kleiman">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="mailto:anatkleiman@g.harvard.edu">
+              <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"></path>
+              </svg>
+              Email
+            </a>
+            <a class="text-link" href="https://scholar.google.com/citations?user=1QM3BUAAAAAJ&amp;hl=en">
+              <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="m2 9 10-5 10 5-10 5L2 9zm4 2.2V16c3 2.6 9 2.6 12 0v-4.8M22 9v6"></path>
+              </svg>
+              Google Scholar
+            </a>
+            <a class="text-link github-link" href="https://github.com/a-kleiman">
+              <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 .7a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .7z"></path>
+              </svg>
+              GitHub
+            </a>
           </div>
         </div>
       </div>
 
       <div class="research-block" id="research">
         <div class="research-heading reveal">
-          <p class="section-label">Research agenda</p>
           <h2>Research</h2>
         </div>
 
@@ -125,6 +141,7 @@
 
         <div class="featured-papers">
           <article class="paper-card featured reveal">
+            <img class="paper-image" src="assets/publications/unlearning.webp" alt="Abstract illustration of low-influence training points being removed from a stable model" width="960" height="640" loading="lazy">
             <div class="paper-meta">
               <span>2025</span>
               <span>Machine unlearning</span>
@@ -142,6 +159,7 @@
           </article>
 
           <article class="paper-card featured reveal">
+            <img class="paper-image" src="assets/publications/smel.webp" alt="Abstract illustration of trustworthy and unreliable information passing through a language model" width="960" height="640" loading="lazy">
             <div class="paper-meta">
               <span>2025</span>
               <span>Reliable LLMs</span>
@@ -159,6 +177,7 @@
           </article>
 
           <article class="paper-card featured reveal">
+            <img class="paper-image" src="assets/publications/soup-to-go.webp" alt="Abstract illustration of model checkpoints averaging into a continual-learning trajectory" width="960" height="640" loading="lazy">
             <div class="paper-meta">
               <span>2025</span>
               <span>Continual learning</span>
@@ -175,6 +194,7 @@
           </article>
 
           <article class="paper-card featured reveal">
+            <img class="paper-image" src="assets/publications/transcendence.webp" alt="Abstract illustration of a chess model rising beyond the experts that trained it" width="960" height="640" loading="lazy">
             <div class="paper-meta">
               <span>NeurIPS 2024</span>
               <span>Generative models</span>
@@ -242,15 +262,8 @@
     </section>
 
     <section class="section shell" id="background">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-label">Background</p>
-          <h2>Background</h2>
-        </div>
-        <p>
-          I have worked across foundational and applied machine learning, from language
-          models and unlearning to video systems and autonomous vehicles.
-        </p>
+      <div class="section-heading simple-heading reveal">
+        <h2>Background</h2>
       </div>
 
       <div class="background-grid">
@@ -277,7 +290,7 @@
             <div class="timeline-date">2019–2020</div>
             <div>
               <h4>Uber ATG</h4>
-              <p>Software Engineering Intern · Self-driving systems</p>
+              <p>Software Engineering Intern · Self-driving vehicles</p>
             </div>
           </article>
         </div>
