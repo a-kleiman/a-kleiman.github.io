@@ -250,7 +250,22 @@ button {
 }
 
 .profile-copy h1 {
+  width: fit-content;
   font-weight: 700;
+  cursor: default;
+  transition: color 260ms ease;
+}
+
+.profile-copy h1:hover {
+  color: var(--terracotta);
+  animation: name-wiggle 540ms ease;
+}
+
+@keyframes name-wiggle {
+  0%, 100% { transform: rotate(0); }
+  30% { transform: rotate(-2.2deg); }
+  60% { transform: rotate(1.4deg); }
+  82% { transform: rotate(-0.7deg); }
 }
 
 .profile-copy::after {
@@ -380,6 +395,7 @@ button {
   height: 54%;
   background: var(--peach);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 22% 100%);
+  transition: transform 420ms ease;
 }
 
 .portrait {
@@ -391,6 +407,16 @@ button {
   background: var(--paper);
   box-shadow: 0 12px 32px rgba(32, 43, 38, 0.12);
   transform: rotate(-1deg);
+  transition: transform 420ms cubic-bezier(0.2, 0.8, 0.3, 1), box-shadow 420ms ease;
+}
+
+.portrait-wrap:hover .portrait {
+  transform: rotate(1.5deg) scale(1.05);
+  box-shadow: 0 22px 50px rgba(32, 43, 38, 0.2);
+}
+
+.portrait-wrap:hover .portrait-accent {
+  transform: translate(7px, -7px) rotate(4deg);
 }
 
 .portrait img {
