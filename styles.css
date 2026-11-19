@@ -859,6 +859,18 @@ button {
   outline-offset: 4px;
 }
 
+/* Keep the header on one line at mid widths: drop the subtitle (the intro says the same). */
+@media (min-width: 721px) and (max-width: 1080px) {
+  .wordmark-sep,
+  .wordmark-title {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 1.6rem;
+  }
+}
+
 @media (max-width: 920px) {
   .portrait-wrap {
     width: 156px;

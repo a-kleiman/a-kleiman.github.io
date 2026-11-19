@@ -15,8 +15,8 @@
   <title>Anat Kleiman — Machine Learning Researcher</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="mask-icon" href="assets/favicon.svg" color="#17211f">
-  <link rel="stylesheet" href="styles.css?v=8">
-  <script src="script.js?v=8" defer></script>
+  <link rel="stylesheet" href="styles.css?v=9">
+  <script src="script.js?v=9" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,11 +41,18 @@
         "url": "https://kempnerinstitute.harvard.edu/"
       }
     ],
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Princeton University",
-      "url": "https://www.princeton.edu/"
-    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Princeton University",
+        "url": "https://www.princeton.edu/"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Brandeis University",
+        "url": "https://www.brandeis.edu/"
+      }
+    ],
     "knowsAbout": [
       "Machine learning",
       "Large language models",
@@ -88,6 +95,7 @@
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#background">Background</a>
+        <a href="assets/Anat_Kleiman_Resume.pdf">Resume</a>
         <a class="nav-contact" href="mailto:anatkleiman@g.harvard.edu">
           <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"></path>
@@ -113,6 +121,7 @@
             I am a final-year PhD candidate at Harvard, advised by
             <a href="https://shamulent.github.io/">Sham Kakade</a> and
             <a href="https://www.jfrankle.com/">Jonathan Frankle</a>.
+            I am on the 2026–27 job market.
           </p>
           <p class="fellowship-note">
             I am funded by the
@@ -130,6 +139,12 @@
                 <path d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"></path>
               </svg>
               Email
+            </a>
+            <a class="text-link" href="assets/Anat_Kleiman_Resume.pdf">
+              <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M6 2.5h8l4.5 4.5v14.5H6zM14 2.5V7h4.5M9 12h6M9 15.5h6M9 19h4"></path>
+              </svg>
+              Resume
             </a>
             <a class="text-link" href="https://scholar.google.com/citations?user=1QM3BUAAAAAJ&amp;hl=en">
               <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -272,14 +287,16 @@
               <span>2025</span>
               <span>Continual learning</span>
             </div>
-            <h3>Soup to Go: Mitigating Forgetting During Continual Learning with Model Averaging</h3>
+            <h3>Forget About It: Mitigating Forgetting Without Replay or Auxiliary Objectives</h3>
             <p class="authors"><strong>Anat Kleiman</strong>, Gintare Karolina Dziugaite, Jonathan Frankle, Sham M. Kakade, Mansheej Paul</p>
             <p class="paper-summary">
-              Introduces Sequential Fine-tuning with Averaging, retaining prior knowledge
-              across domains without replaying old data.
+              Introduces Sequential Fine-tuning with Averaging (SFA): periodically averaging
+              weights back toward the task's starting checkpoint mitigates forgetting without
+              replaying old data or adding auxiliary losses.
             </p>
             <div class="paper-links">
               <a href="https://arxiv.org/abs/2501.05559"><img class="arxiv-logo" src="assets/arxiv.svg" alt="arXiv"> <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/a-kleiman/forget-about-it">Code <span aria-hidden="true">↗</span></a>
             </div>
           </article>
 
@@ -339,6 +356,15 @@
           </article>
 
           <article class="paper-row">
+            <div class="paper-year">2021</div>
+            <div>
+              <h4>Reading the Road: Leveraging Meta-Learning to Learn Other Driver Behavior</h4>
+              <p><strong>Anat Kleiman</strong>, Ryan P. Adams</p>
+              <p class="venue">WiML Workshop at NeurIPS</p>
+            </div>
+          </article>
+
+          <article class="paper-row">
             <div class="paper-year">2020</div>
             <div>
               <h4>Buffer Pool Aware Query Scheduling via Deep Reinforcement Learning</h4>
@@ -380,7 +406,7 @@
             <div class="timeline-date">Summer 2022</div>
             <div>
               <h4>Netflix</h4>
-              <p>Machine Learning Intern · Video automation</p>
+              <p>Machine Learning Research Intern · Video automation</p>
             </div>
           </article>
           <article>
@@ -389,6 +415,14 @@
             <div>
               <h4>Uber ATG</h4>
               <p>Software Engineering Intern · Self-driving vehicles</p>
+            </div>
+          </article>
+          <article>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-date">2020</div>
+            <div>
+              <h4>Liberty Mutual Insurance</h4>
+              <p>Machine Learning Co-op · Production ML models and NLP text analytics</p>
             </div>
           </article>
         </div>
@@ -405,7 +439,13 @@
             <span class="education-year">2020–2022</span>
             <h4><img class="edu-logo" src="assets/Princeton_seal.svg" alt=""> Princeton University</h4>
             <p>MSE in Computer Science</p>
-            <p class="detail">Worked with Ryan Adams</p>
+            <p class="detail">Advised by Ryan P. Adams</p>
+          </article>
+          <article>
+            <span class="education-year">2020</span>
+            <h4>Brandeis University</h4>
+            <p>BS in Computer Science and Economics</p>
+            <p class="detail">Summa Cum Laude · Phi Beta Kappa</p>
           </article>
         </div>
       </div>
@@ -419,6 +459,7 @@
       <div>
         <a href="https://scholar.google.com/citations?user=1QM3BUAAAAAJ&amp;hl=en">Scholar</a>
         <a href="https://github.com/a-kleiman">GitHub</a>
+        <a href="assets/Anat_Kleiman_Resume.pdf">Resume</a>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
